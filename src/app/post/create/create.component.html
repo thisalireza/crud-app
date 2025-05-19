@@ -1,0 +1,39 @@
+<div class="container mt-5">
+  <h1>Create New Post</h1>
+
+  <a href="#" routerLink="/post/index" class="btn btn-primary">Back</a>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input
+        formControlName="title"
+        id="title"
+        type="text"
+        class="form-control">
+      <div  class="alert alert-danger">
+        <div >
+          Title is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="body">Body</label>
+      <textarea
+        formControlName="body"
+        id="body"
+        type="text"
+        class="form-control">
+            </textarea>
+      <div  class="alert alert-danger">
+        <div >
+          Body is required.
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+  </form>
+</div>
